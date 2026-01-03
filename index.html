@@ -184,10 +184,19 @@
         setInterval(createHeart, 500);
 
         // Müzik Başlatma
-        window.addEventListener('click', () => {
-            const audio = document.getElementById('bgMusic');
-            audio.play().catch(e => console.log("Müzik dosyası eksik veya format uyumsuz."));
-        }, { once: true });
+        // YENİ HALİ: (Mobil uyumlu ses başlatıcı)
+    const startAudio = () => {
+        const audio = document.getElementById('bgMusic');
+        audio.play().then(() => {
+            // Müzik başlayınca dinleyicileri kaldır ki her tıklamada başa dönmesin
+            window.removeEventListener('click', startAudio);
+            window.removeEventListener('touchstart', startAudio);
+        }).catch(e => console.log("Ses hatası: ", e));
+    };
+
+// Hem tıklama hem de dokunma (mobil için) olayını dinliyoruz
+window.addEventListener('click', startAudio);
+window.addEventListener('touchstart', startAudio);
     </script>
 </body>
 </html>
