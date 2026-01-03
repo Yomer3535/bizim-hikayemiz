@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonsuza Dek Biz ❤️</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { --main-pink: #ff4d6d; }
+        body { font-family: 'Montserrat', sans-serif; overflow-x: hidden; background-color: #fff5f7; }
+        .font-love { font-family: 'Dancing Script', cursive; }
+        
+        /* Arka Plan Kalp Efekti */
+        .heart { position: fixed; font-size: 20px; color: var(--main-pink); opacity: 0.3; z-index: -1; animation: fly 10s linear infinite; }
+        @keyframes fly {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+
+        .glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        .hero-gradient { background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=2070'); background-size: cover; background-position: center; }
+    </style>
+</head>
+<body>
+
+    <audio id="bgMusic" loop>
+        <source src="images/sarki.mp3" type="audio/mpeg">
+    </audio>
+
+    <header class="h-screen flex items-center justify-center hero-gradient relative">
+        <div class="text-center text-white p-6" data-aos="zoom-in">
+            <h1 class="text-7xl md:text-9xl font-love mb-4">Kardelen & Ömer</h1> <p class="text-xl md:text-2xl tracking-widest uppercase">Bizim hikayemiz</p> 
+            <div class="mt-8 animate-bounce text-5xl">↓</div>
+            <p class="text-l md:text-2xl tracking-widest uppercase">(Şarkı için herhangi bir yere bas)</p>
+        </div>
+    </header>
+
+    <section class="py-20 px-4">
+        <div class="max-w-4xl mx-auto glass-card rounded-3xl p-10 text-center shadow-2xl" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-pink-600 mb-8 font-love text-5xl">Seninle geçen</h2>
+            <div id="countdown" class="grid grid-cols-2 md:grid-cols-4 gap-4 text-pink-500 font-bold">
+                <div class="bg-white p-4 rounded-xl shadow"> <span id="days" class="text-4xl block text-gray-800">0</span> GÜN </div>
+                <div class="bg-white p-4 rounded-xl shadow"> <span id="hours" class="text-4xl block text-gray-800">0</span> SAAT </div>
+                <div class="bg-white p-4 rounded-xl shadow"> <span id="minutes" class="text-4xl block text-gray-800">0</span> DAKİKA </div>
+                <div class="bg-white p-4 rounded-xl shadow"> <span id="seconds" class="text-4xl block text-gray-800">0</span> SANİYE </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-20 bg-pink-50">
+        <h2 class="text-6xl font-love text-center text-pink-600 mb-20" data-aos="fade-down">Bizden anılar</h2>
+        <div class="max-w-6xl mx-auto px-4 space-y-24">
+
+            <div class="grid md:grid-cols-2 items-center gap-12" data-aos="fade-right">
+                <div class="text-right">
+                    <span class="text-pink-400 font-bold text-xl">27 Ekim 2025</span>
+                    <h3 class="text-3xl font-bold my-4">Yine çok aç...</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg">Beni kokoreç sandı</p>
+                </div>
+                <img src="images/yine_ac.jpeg" class="rounded-3xl shadow-2xl h-80 w-full object-cover img-zoom"> </div>
+
+            <div class="grid md:grid-cols-2 items-center gap-12" data-aos="fade-left">
+                <div class="text-right">
+                    <span class="text-pink-400 font-bold text-xl">9 Ağustos 2025</span>
+                    <h3 class="text-3xl font-bold my-4">Derse alkollü gelen hocan</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg">O portakal suyunu sen döktün</p>
+                </div>
+                <img src="images/portakal_suyu.jpeg" class="rounded-3xl shadow-2xl h-80 w-full object-cover img-zoom"> </div>
+
+            <div class="grid md:grid-cols-2 items-center gap-12" data-aos="fade-right">
+                <div class="text-right">
+                    <span class="text-pink-400 font-bold text-xl">4 Aralık 2025</span>
+                    <h3 class="text-3xl font-bold my-4">İlk sinemamız</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg">azcık geç olmuştu</p>
+                </div>
+                <img src="images/sinema.jpeg" class="rounded-3xl shadow-2xl h-80 w-full object-cover img-zoom"> </div>
+
+            <div class="grid md:grid-cols-2 items-center gap-12" data-aos="fade-left">
+                <div class="text-right">
+                    <span class="text-pink-400 font-bold text-xl">22 Temmuz 2025</span>
+                    <h3 class="text-3xl font-bold my-4">Geçen yazın özeti</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg">İki güzel manzara vardı karşımda</p>
+                </div>
+                <img src="images/yaz_ozeti.jpeg" class="rounded-3xl shadow-2xl h-80 w-full object-cover img-zoom"> </div>
+
+            <div class="grid md:grid-cols-2 items-center gap-12" data-aos="fade-right">
+                <div class="text-right">
+                    <span class="text-pink-400 font-bold text-xl">27 Ekim 2025</span>
+                    <h3 class="text-3xl font-bold my-4">Walter white ve biz</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg">ve tabi sigaram</p>
+                </div>
+                <img src="images/walter_w.jpeg" class="rounded-3xl shadow-2xl h-80 w-full object-cover img-zoom"> </div>
+
+            <div class="grid md:grid-cols-2 items-center gap-12" data-aos="fade-left">
+                <div class="text-right">
+                    <span class="text-pink-400 font-bold text-xl">15 Aralık 2025</span>
+                    <h3 class="text-3xl font-bold my-4">Doğum günüm</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg">Benden daha çağ dışı varlıklar görmek mutlu etmişti</p>
+                </div>
+                <img src="images/dogum_gunu.jpeg" class="rounded-3xl shadow-2xl h-80 w-full object-cover img-zoom"> </div>
+
+            <div class="grid md:grid-cols-2 items-center gap-12" data-aos="fade-right">
+                <div class="text-right">
+                    <span class="text-pink-400 font-bold text-xl">1 Ocak 2026</span>
+                    <h3 class="text-3xl font-bold my-4">Dursunumu öldürdün</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg">karıdelen</p>
+                </div>
+                <img src="images/kar.jpeg" class="rounded-3xl shadow-2xl h-80 w-full object-cover img-zoom"> </div>
+
+            <div class="grid md:grid-cols-2 items-center gap-12" data-aos="fade-left">
+                <div class="text-right">
+                    <span class="text-pink-400 font-bold text-xl">28 Aralık 2025</span>
+                    <h3 class="text-3xl font-bold my-4">6 ay sonunda ben</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg">Kafamda saç bırakmadın be kadın</p>
+                </div>
+                <img src="images/kel.jpeg" class="rounded-3xl shadow-2xl h-80 w-full object-cover img-zoom"> </div>
+
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-5xl font-love text-center text-pink-600 mb-16" data-aos="fade-down">Peki kim bu kadın??</h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="flex flex-col items-center" data-aos="fade-up">
+                    <img src="images/guclu.jpeg" class="w-full h-64 object-cover rounded-2xl shadow-lg mb-4 img-zoom"> <h3 class="text-2xl font-bold text-pink-600 mb-2">Güçlü</h3>
+                    <p class="text-center text-gray-600">İddayı kaybetmiştim</p>
+                </div>
+                <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/ac.jpeg" class="w-full h-64 object-cover rounded-2xl shadow-lg mb-4 img-zoom"> <h3 class="text-2xl font-bold text-pink-600 mb-2">Bazen biraz aç</h3>
+                    <p class="text-center text-gray-600">Tam kokoreç yiyebilir kendisi</p>
+                </div>
+                <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="400">
+                    <img src="images/gulus.jpeg" class="w-full h-64 object-cover rounded-2xl shadow-lg mb-4 img-zoom"> <h3 class="text-2xl font-bold text-pink-600 mb-2">Dünyalar güzeli</h3>
+                    <p class="text-center text-gray-600">Böyle gülünce her şeyi unutturuyorsun</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-32 bg-pink-600 text-white text-center px-4">
+        <div data-aos="fade-up">
+            <h2 class="text-6xl font-love mb-8">Seni Çok Seviyorum</h2>
+            <p class="text-xl max-w-lg mx-auto opacity-80 italic mb-10">
+                "Her satırı senin için yazıldı, her karesi seninle yaşandı."
+            </p>
+            <div class="text-4xl tracking-widest">❤️ ✨</div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // SAYAÇ
+        function countdown() {
+            const start = new Date("2025-06-18T00:00:00").getTime(); // DEĞİŞTİR: Sizin tarih
+            const now = new Date().getTime();
+            const gap = now - start;
+            const second = 1000, minute = second * 60, hour = minute * 60, day = hour * 24;
+
+            document.getElementById("days").innerText = Math.floor(gap / day);
+            document.getElementById("hours").innerText = Math.floor((gap % day) / hour);
+            document.getElementById("minutes").innerText = Math.floor((gap % hour) / minute);
+            document.getElementById("seconds").innerText = Math.floor((gap % minute) / second);
+        }
+        setInterval(countdown, 1000);
+
+        // KALP YAĞMURU
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 7 + "s";
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 10000);
+        }
+        setInterval(createHeart, 500);
+
+        // Müzik Başlatma
+        window.addEventListener('click', () => {
+            const audio = document.getElementById('bgMusic');
+            audio.play().catch(e => console.log("Müzik dosyası eksik veya format uyumsuz."));
+        }, { once: true });
+    </script>
+</body>
+</html>
