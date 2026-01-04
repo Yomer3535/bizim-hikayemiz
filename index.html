@@ -142,18 +142,18 @@
             </div>
         </div>
     </section>
-    const loveNotes = [
-    "O güzel gülüşün için...",
-    "doğallığın için (çok abartmayalım bunu ama)",
-    "Beni benden çok düşündüğün için.",
-    "Her düştüğümde elimi ilk sen tuttuğun için."
-];
-
-function showNote() {
-    const note = loveNotes[Math.floor(Math.random() * loveNotes.length)];
-    alert("❤️ " + note); // Bunu daha sonra şık bir modal veya popup yapabiliriz.
-}
-
+    
+    <section class="py-16 text-center bg-white/50 backdrop-blur-sm">
+        <div class="max-w-2xl mx-auto px-4">
+            <button onclick="notuDegistir()" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 px-10 rounded-full shadow-2xl transform transition hover:scale-105 active:scale-95 mb-8">
+                Bana Bir Not Bırak ❤️
+            </button>
+            
+            <div class="h-24 flex items-center justify-center">
+                <p id="mesajAlani" class="text-2xl md:text-3xl font-love text-pink-600 italic transition-opacity duration-500"></p>
+            </div>
+        </div>
+    </section>
     <footer class="py-32 bg-pink-600 text-white text-center px-4">
         <div data-aos="fade-up">
             <h2 class="text-6xl font-love mb-8">Seni Çok Seviyorum</h2>
@@ -227,6 +227,28 @@ function showNote() {
 // Hem tıklama hem de dokunma (mobil için) olayını dinliyoruz
 window.addEventListener('click', startAudio);
 window.addEventListener('touchstart', startAudio);
+    const askNotlari = [
+    "O güzel gülüşün için...",
+    "doğallığın için (çok abartmayalım bunu ama)",
+    "Beni benden çok düşündüğün için.",
+    "Her düştüğümde elimi ilk sen tuttuğun için."
+];
+
+function notuDegistir() {
+    const mesajElementi = document.getElementById("mesajAlani");
+    
+    // Rastgele bir not seç
+    const rastgeleNot = askNotlari[Math.floor(Math.random() * askNotlari.length)];
+    
+    // Şık bir geçiş efekti (Opaklık azalt, yazıyı değiştir, opaklık arttır)
+    mesajElementi.style.opacity = 0;
+    
+    setTimeout(() => {
+        mesajElementi.innerText = rastgeleNot;
+        mesajElementi.style.opacity = 1;
+    }, 300);
+}
+        
     </script>
 </body>
 </html>
