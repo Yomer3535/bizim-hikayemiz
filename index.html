@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">     
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <title>Sonsuza Dek Biz ❤️</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -143,17 +143,39 @@
         </div>
     </section>
     
-    <section class="py-16 text-center bg-white/50 backdrop-blur-sm">
-        <div class="max-w-2xl mx-auto px-4">
-            <button onclick="notuDegistir()" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 px-10 rounded-full shadow-2xl transform transition hover:scale-105 active:scale-95 mb-8">
-                Seni neden sevdiğimi öğrenmek istersen tıkla ❤️
-            </button>
+    <section class="py-16 bg-pink-50/50 backdrop-blur-sm" data-aos="fade-up">
+        <div class="max-w-2xl mx-auto px-4 text-center">
+            <h2 class="text-5xl font-love text-pink-600 mb-2">Canlı Haklılık Sayacı 📊</h2>
+            <p class="text-gray-500 text-sm mb-8">Tartışmalardaki haklılık oranımızın anlık ve bilimsel analizi</p>
             
-            <div class="h-24 flex items-center justify-center">
-                <p id="mesajAlani" class="text-2xl md:text-3xl font-love text-pink-600 italic transition-opacity duration-500"></p>
+            <div class="space-y-6 bg-white p-8 rounded-3xl shadow-xl border border-pink-100">
+                <div>
+                    <div class="flex justify-between items-center text-lg font-bold text-gray-700 mb-2">
+                        <span>Kardelen</span>
+                        <span class="text-pink-600 text-2xl">%99.9</span>
+                    </div>
+                    <div class="w-full bg-gray-100 rounded-full h-5 overflow-hidden p-0.5 border border-pink-200">
+                        <div class="bg-gradient-to-r from-pink-400 to-pink-600 h-full rounded-full" style="width: 99.9%"></div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="flex justify-between items-center text-lg font-bold text-gray-700 mb-2">
+                        <span>Ömer</span>
+                        <span class="text-gray-400 text-xl">%0.1</span>
+                    </div>
+                    <div class="w-full bg-gray-100 rounded-full h-5 overflow-hidden p-0.5">
+                        <div class="bg-gray-300 h-full rounded-full" style="width: 1%"></div>
+                    </div>
+                </div>
             </div>
+            
+            <p class="text-gray-500 mt-6 italic text-sm px-4">
+                * Not: Ömer'in %0.1'lik payı; sadece "Aşkım sen haklısın" dediği ve kokoreç ısmarladığı anlarda geçici olarak aktif olmaktadır. Veriler ilişki istatistikleri merkezinden anlık alınmaktadır.
+            </p>
         </div>
     </section>
+
     <footer class="py-32 bg-pink-600 text-white text-center px-4">
         <div data-aos="fade-up">
             <h2 class="text-6xl font-love mb-8">Seni Çok Seviyorum</h2>
@@ -193,7 +215,8 @@
             setTimeout(() => { heart.remove(); }, 10000);
         }
         setInterval(createHeart, 500);
-            document.addEventListener('mousemove', function(e) {
+        
+        document.addEventListener('mousemove', function(e) {
             const heart = document.createElement("div");
             heart.innerHTML = "❤️";
             heart.style.position = "fixed";
@@ -205,50 +228,25 @@
             heart.style.opacity = "1";
             document.body.appendChild(heart);
 
-    setTimeout(() => {
-        heart.style.transform = "translateY(-50px)";
-        heart.style.opacity = "0";
-    }, 50);
+            setTimeout(() => {
+                heart.style.transform = "translateY(-50px)";
+                heart.style.opacity = "0";
+            }, 50);
 
-    setTimeout(() => { heart.remove(); }, 1000);
-});
+            setTimeout(() => { heart.remove(); }, 1000);
+        });
 
-        // Müzik Başlatma
-        // YENİ HALİ: (Mobil uyumlu ses başlatıcı)
-    const startAudio = () => {
-        const audio = document.getElementById('bgMusic');
-        audio.play().then(() => {
-            // Müzik başlayınca dinleyicileri kaldır ki her tıklamada başa dönmesin
-            window.removeEventListener('click', startAudio);
-            window.removeEventListener('touchstart', startAudio);
-        }).catch(e => console.log("Ses hatası: ", e));
-    };
+        // Müzik Başlatma (Mobil uyumlu ses başlatıcı)
+        const startAudio = () => {
+            const audio = document.getElementById('bgMusic');
+            audio.play().then(() => {
+                window.removeEventListener('click', startAudio);
+                window.removeEventListener('touchstart', startAudio);
+            }).catch(e => console.log("Ses hatası: ", e));
+        };
 
-// Hem tıklama hem de dokunma (mobil için) olayını dinliyoruz
-window.addEventListener('click', startAudio);
-window.addEventListener('touchstart', startAudio);
-    const askNotlari = [
-    "O güzel gülüşün için...",
-    "doğallığın için",
-    "Beni benden çok düşündüğün için.",
-    "Her düştüğümde elimi ilk sen tuttuğun için."
-];
-
-function notuDegistir() {
-    const mesajElementi = document.getElementById("mesajAlani");
-    
-    // Rastgele bir not seç
-    const rastgeleNot = askNotlari[Math.floor(Math.random() * askNotlari.length)];
-    
-    // Şık bir geçiş efekti (Opaklık azalt, yazıyı değiştir, opaklık arttır)
-    mesajElementi.style.opacity = 0;
-    
-    setTimeout(() => {
-        mesajElementi.innerText = rastgeleNot;
-        mesajElementi.style.opacity = 1;
-    }, 300);
-}
-        
+        window.addEventListener('click', startAudio);
+        window.addEventListener('touchstart', startAudio);
     </script>
 </body>
 </html>
