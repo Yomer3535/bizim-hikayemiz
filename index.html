@@ -51,7 +51,6 @@
         </div>
     </section>
 
-
     <section class="py-20 bg-pink-50">
         <h2 class="text-6xl font-love text-center text-pink-600 mb-20" data-aos="fade-down">Bizden anılar</h2>
         <div class="max-w-6xl mx-auto px-4 space-y-24">
@@ -143,36 +142,69 @@
         </div>
     </section>
     
+    <!-- DİNAMİK HAKLILIK SAYACI -->
     <section class="py-16 bg-pink-50/50 backdrop-blur-sm" data-aos="fade-up">
         <div class="max-w-2xl mx-auto px-4 text-center">
-            <h2 class="text-5xl font-love text-pink-600 mb-2">Canlı Haklılık Sayacı 📊</h2>
-            <p class="text-gray-500 text-sm mb-8">Tartışmalardaki haklılık oranımızın anlık ve bilimsel analizi</p>
+            <h2 class="text-5xl font-love text-pink-600 mb-8">Canlı Haklılık Sayacı 📊</h2>
             
-            <div class="space-y-6 bg-white p-8 rounded-3xl shadow-xl border border-pink-100">
-                <div>
-                    <div class="flex justify-between items-center text-lg font-bold text-gray-700 mb-2">
-                        <span>Kardelen</span>
-                        <span class="text-pink-600 text-2xl">%99.9</span>
-                    </div>
-                    <div class="w-full bg-gray-100 rounded-full h-5 overflow-hidden p-0.5 border border-pink-200">
-                        <div class="bg-gradient-to-r from-pink-400 to-pink-600 h-full rounded-full" style="width: 99.9%"></div>
-                    </div>
-                </div>
+            <button onclick="haklilikHesapla()" class="w-full text-left bg-white p-8 rounded-3xl shadow-xl border border-pink-100 transform transition hover:scale-105 cursor-pointer focus:outline-none">
                 
-                <div>
-                    <div class="flex justify-between items-center text-lg font-bold text-gray-700 mb-2">
-                        <span>Ömer</span>
-                        <span class="text-gray-400 text-xl">%0.1</span>
+                <div id="haklilikBaslatBtn" class="text-center text-xl font-bold text-pink-500 py-6">
+                    Tıkla ve Gerçek Oranları Gör 🎲
+                </div>
+
+                <div id="haklilikSonuc" class="hidden space-y-6">
+                    <!-- Kardelen Oranı -->
+                    <div>
+                        <div class="flex justify-between items-center text-lg font-bold text-gray-700 mb-2">
+                            <span>Kardelen</span>
+                            <span id="kardelenYuzde" class="text-pink-600 text-2xl">%0</span>
+                        </div>
+                        <div class="w-full bg-gray-100 rounded-full h-5 overflow-hidden p-0.5 border border-pink-200">
+                            <div id="kardelenBar" class="bg-gradient-to-r from-pink-400 to-pink-600 h-full rounded-full transition-all duration-1000 ease-out" style="width: 0%"></div>
+                        </div>
                     </div>
-                    <div class="w-full bg-gray-100 rounded-full h-5 overflow-hidden p-0.5">
-                        <div class="bg-gray-300 h-full rounded-full" style="width: 1%"></div>
+                    
+                    <!-- Ömer Oranı -->
+                    <div>
+                        <div class="flex justify-between items-center text-lg font-bold text-gray-700 mb-2">
+                            <span>Ömer</span>
+                            <span id="omerYuzde" class="text-gray-400 text-xl">%0</span>
+                        </div>
+                        <div class="w-full bg-gray-100 rounded-full h-5 overflow-hidden p-0.5">
+                            <div id="omerBar" class="bg-gray-300 h-full rounded-full transition-all duration-1000 ease-out" style="width: 0%"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </button>
+        </div>
+    </section>
+
+    <!-- 1. YILDAN SELAMLAR (FOTOĞRAF KAYDIRICI) -->
+    <section class="py-20 bg-white" data-aos="fade-up">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-5xl font-love text-center text-pink-600 mb-12">1. Yıldan Selamlar 📸</h2>
             
-            <p class="text-gray-500 mt-6 italic text-sm px-4">
-                * Not: Ömer'in %0.1'lik payı; sadece "Aşkım sen haklısın" dediği ve kokoreç ısmarladığı anlarda geçici olarak aktif olmaktadır. Veriler ilişki istatistikleri merkezinden anlık alınmaktadır.
-            </p>
+            <div class="relative w-full h-[300px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl bg-pink-50">
+                <!-- Fotoğraflar -->
+                <div id="sliderItems" class="flex transition-transform duration-500 ease-in-out h-full" style="transform: translateX(0%); w-full">
+                    <img src="yil_foto1.jpeg" class="w-full h-full object-cover flex-shrink-0" alt="1. Yıl Foto 1">
+                    <img src="yil_foto2.jpeg" class="w-full h-full object-cover flex-shrink-0" alt="1. Yıl Foto 2">
+                    <img src="yil_foto3.jpeg" class="w-full h-full object-cover flex-shrink-0" alt="1. Yıl Foto 3">
+                    <img src="yil_foto4.jpeg" class="w-full h-full object-cover flex-shrink-0" alt="1. Yıl Foto 4">
+                    <img src="yil_foto5.jpeg" class="w-full h-full object-cover flex-shrink-0" alt="1. Yıl Foto 5">
+                    <img src="yil_foto6.jpeg" class="w-full h-full object-cover flex-shrink-0" alt="1. Yıl Foto 6">
+                    <img src="yil_foto7.jpeg" class="w-full h-full object-cover flex-shrink-0" alt="1. Yıl Foto 7">
+                </div>
+
+                <!-- Sol-Sağ Butonları -->
+                <button onclick="slide(-1)" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-pink-600 rounded-full p-3 shadow-lg transition z-10 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <button onclick="slide(1)" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-pink-600 rounded-full p-3 shadow-lg transition z-10 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
         </div>
     </section>
 
@@ -236,7 +268,7 @@
             setTimeout(() => { heart.remove(); }, 1000);
         });
 
-        // Müzik Başlatma (Mobil uyumlu ses başlatıcı)
+        // Müzik Başlatma
         const startAudio = () => {
             const audio = document.getElementById('bgMusic');
             audio.play().then(() => {
@@ -244,9 +276,46 @@
                 window.removeEventListener('touchstart', startAudio);
             }).catch(e => console.log("Ses hatası: ", e));
         };
-
         window.addEventListener('click', startAudio);
         window.addEventListener('touchstart', startAudio);
+
+        // DİNAMİK HAKLILIK HESAPLAYICI
+        function haklilikHesapla() {
+            document.getElementById('haklilikBaslatBtn').style.display = 'none';
+            const sonucAlani = document.getElementById('haklilikSonuc');
+            sonucAlani.classList.remove('hidden');
+            
+            // Ömer için 0.01 ile 1.00 arası rastgele değer
+            let omerDeger = (Math.random() * (1.00 - 0.01) + 0.01).toFixed(2);
+            let kardelenDeger = (100 - omerDeger).toFixed(2);
+            
+            document.getElementById('kardelenYuzde').innerText = "%" + kardelenDeger;
+            document.getElementById('omerYuzde').innerText = "%" + omerDeger;
+            
+            // Barların dolum animasyonu için ufak bir gecikme
+            setTimeout(() => {
+                document.getElementById('kardelenBar').style.width = kardelenDeger + "%";
+                document.getElementById('omerBar').style.width = omerDeger + "%";
+            }, 100);
+        }
+
+        // SLIDER (KAYDIRICI) FONKSİYONLARI
+        let currentSlide = 0;
+        const totalSlides = 7;
+        
+        function slide(direction) {
+            currentSlide += direction;
+            
+            if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            } else if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            }
+            
+            const sliderItems = document.getElementById('sliderItems');
+            // Her resim %100 genişlikte olduğu için, slide index'i ile çarpıp kaydırıyoruz
+            sliderItems.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
     </script>
 </body>
 </html>
